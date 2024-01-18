@@ -101,6 +101,9 @@ python run.py --model ERNIE
 [1] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding  
 [2] ERNIE: Enhanced Representation through Knowledge Integration  
 
+## java部署大模型
+[1] 参考：https://github.com/C-300SilverMountain/onnxruntime-java
+
 
 # 避坑指南
 
