@@ -3,9 +3,12 @@ from importlib import import_module
 
 # python: 将bert模型原始格式 转换成 onnx格式(微软)，以便用java加载模型 & 部署
 # https://cloud.tencent.com/developer/article/2160621
-# 环境准备：
+# 环境准备(cpu)：
 # pip install onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple
 # pip install onnx
+
+# 环境准备（GPU）：
+# pip install onnxruntime-gpu -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 model_name = 'bert'
 x = import_module('models.' + model_name)
