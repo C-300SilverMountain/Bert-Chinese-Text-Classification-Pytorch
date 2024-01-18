@@ -7,15 +7,17 @@ from importlib import import_module
 import argparse
 from utils import build_dataset, build_iterator, get_time_dif
 
-parser = argparse.ArgumentParser(description='Chinese Text Classification')
-parser.add_argument('--model', type=str, required=True, help='choose a model: Bert, ERNIE')
-args = parser.parse_args()
+# 注释掉，方便编译器运行
+# parser = argparse.ArgumentParser(description='Chinese Text Classification')
+# parser.add_argument('--model', type=str, required=True, help='choose a model: Bert, ERNIE')
+# args = parser.parse_args()
 
 
 if __name__ == '__main__':
     dataset = 'THUCNews'  # 数据集
-
-    model_name = args.model  # bert
+    # 注释掉，方便编译器运行
+    # model_name = args.model  # bert
+    model_name = 'bert'
     x = import_module('models.' + model_name)
     config = x.Config(dataset)
     np.random.seed(1)
@@ -30,8 +32,12 @@ if __name__ == '__main__':
     dev_iter = build_iterator(dev_data, config)
     test_iter = build_iterator(test_data, config)
     time_dif = get_time_dif(start_time)
-    print("Time usage:", time_dif)
+    print("took on load data:", time_dif)
 
     # train
     model = x.Model(config).to(config.device)
     train(config, model, train_iter, dev_iter, test_iter)
+    time_dif = get_time_dif(start_time)
+    print("took on train:", time_dif)
+    print("训练完成，模型bert.ckpt已保存到：THUCNews/saved_dict目录下")
+    print("可以执行bert_to_onnx.py，转换成onnx格式，以便onnxruntime-java部署")

@@ -8,12 +8,16 @@
 
 机器：一块2080Ti ， 训练时间：30分钟。  
 
-## 环境
+## 环境(必须安装依赖)【也可以根据idea提示安装】
+运行run.py会提示依赖
 python 3.7  
 pytorch 1.1  
 tqdm  
 sklearn  
 tensorboardX  
+boto3
+botocore
+regex
 ~~pytorch_pretrained_bert~~(预训练代码也上传了, 不需要这个库了)  
 
 
@@ -50,7 +54,7 @@ bert_DPCNN|94.47%|bert + DPCNN
 
 CNN、RNN、DPCNN、RCNN、RNN+Attention、FastText等模型效果，请见我另外一个[仓库](https://github.com/649453932/Chinese-Text-Classification-Pytorch)。  
 
-## 预训练语言模型
+## 环境准备【预训练语言模型】
 bert模型放在 bert_pretain目录下，ERNIE模型放在ERNIE_pretrain目录下，每个目录下都是三个文件：
  - pytorch_model.bin  
  - bert_config.json  
@@ -68,7 +72,7 @@ ERNIE_Chinese: http://image.nghuyong.top/ERNIE.zip
 
 解压后，按照上面说的放在对应目录下，文件名称确认无误即可。  
 
-## 使用说明
+## 使用说明 - 命令
 下载好预训练模型就可以跑了。
 ```
 # 训练并测试：
@@ -82,6 +86,10 @@ python run.py --model bert_CNN
 python run.py --model ERNIE
 ```
 
+## 使用说明 - 编译器
+1、查看run.py注释部分
+
+
 ### 参数
 模型都在models目录下，超参定义和模型定义在同一文件中。  
 
@@ -92,3 +100,24 @@ python run.py --model ERNIE
 ## 对应论文
 [1] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding  
 [2] ERNIE: Enhanced Representation through Knowledge Integration  
+
+
+# 避坑指南
+
+## [Python 3 Microsoft Visual C++ 14.0 is required](https://www.scivision.dev/python-windows-visual-c-14-required/)
+
+[加利福尼亚州消费者隐私法案(CCPA)选择退出图标](https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/)
+
+[Compile CPython on Windows &#8212; Unofficial Python Development (Victor&#39;s notes) documentation](https://pythondev.readthedocs.io/windows.html#python-and-visual-studio-version-matrix)
+
+
+
+选择：[Python-3.8.10 ](https://www.python.org/downloads/windows/)  +  Visual Studio 2017
+
+[Visual Studio 2017 较早的下载](https://visualstudio.microsoft.com/zh-hans/downloads/)
+
+Visual Studio 2017安装参考：
+
+[【已解决】error: Microsoft Visual C++ 14.0 or greater is required-CSDN博客](https://blog.csdn.net/ViatorSun/article/details/118699938)
+
+
