@@ -1,7 +1,8 @@
+# https://www.cnblogs.com/adalovelacer/p/NLP-bert.html
+
 # https://cloud.tencent.com/developer/article/2160621
 # https://github.com/649453932/Bert-Chinese-Text-Classification-Pytorch/tree/master
-# https://www.cnblogs.com/adalovelacer/p/NLP-bert.html
-# https://github.com/xuanzebi/BERT-CH-NER
+
 import torch
 from importlib import import_module
 
