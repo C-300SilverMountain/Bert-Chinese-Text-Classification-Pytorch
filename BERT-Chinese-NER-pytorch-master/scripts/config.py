@@ -24,7 +24,8 @@ class Config(object):
         self.lr_decay = 0.00001
         self.weight_decay = 0.00005
         self.checkpoint = None
-        self.epochs = 64
+        # self.epochs = 64
+        self.epochs = 5
         self.max_grad_norm = 10
         self.target_dir = '../result/checkpoints/RoBERTa_result'
         self.patience = 5
