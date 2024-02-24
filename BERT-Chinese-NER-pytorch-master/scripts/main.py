@@ -18,6 +18,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from BERT_BiLSTM_CRF import BERT_BiLSTM_CRF
 from utils_ner import train, valid
 import torchsnooper
+import gc
 
 # @torchsnooper.snoop()
 def main():
@@ -145,6 +146,9 @@ def main():
         if patience_counter >= config.patience:
             print("-> Early stopping: patience limit reached, stopping...")
             break
+
+    # 手动触发垃圾回收
+    gc.collect()
     # Plotting of the loss curves for the train and validation sets.
     plt.figure()
     plt.plot(epochs_count, train_losses, "-r")
