@@ -13,6 +13,8 @@ from transformers import AutoModel
 from transformers import BertTokenizer, BertModel
 
 # https://blog.csdn.net/zhonglongshen/article/details/132225485
+# RoBERTa-wwm-ext:
+# https://blog.csdn.net/abc50319/article/details/107903416
 
 model_path = "chinese_roberta_pretrain"
 MODEL_ONNX_PATH = "chinese_roberta_pretrain/saved_dict/raw_bert_dynamic.onnx"
