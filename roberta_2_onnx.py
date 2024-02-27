@@ -15,6 +15,13 @@ from transformers import BertTokenizer, BertModel
 # https://blog.csdn.net/zhonglongshen/article/details/132225485
 # RoBERTa-wwm-ext:
 # https://blog.csdn.net/abc50319/article/details/107903416
+# https://blog.51cto.com/u_15127521/4519264
+# https://www.biaodianfu.com/chineser-nlp-llm.html
+
+# https://aistudio.baidu.com/projectdetail/5456683
+# https://ost.51cto.com/posts/11594
+# https://blog.csdn.net/superman_xxx/article/details/130995504
+# https://segmentfault.com/a/1190000044425102
 
 model_path = "chinese_roberta_pretrain"
 MODEL_ONNX_PATH = "chinese_roberta_pretrain/saved_dict/raw_bert_dynamic.onnx"
