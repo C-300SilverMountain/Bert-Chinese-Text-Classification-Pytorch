@@ -156,7 +156,7 @@ if __name__ == '__main__':
 
 
     # 将roberta转换成 onnx 格式
-    # pytorch_roberta_2_onnx()
+    pytorch_roberta_2_onnx()
 
     # 在onnx环境下运行 roberta
-    run_roberta_on_onnx('chinese_roberta_pretrain/saved_dict/raw_bert_dynamic.onnx')
+    # run_roberta_on_onnx('chinese_roberta_pretrain/saved_dict/raw_bert_dynamic.onnx')
