@@ -23,6 +23,8 @@ from transformers import BertTokenizer, BertModel
 # https://blog.csdn.net/superman_xxx/article/details/130995504
 # https://segmentfault.com/a/1190000044425102
 # https://blog.csdn.net/qq_43692950/article/details/133768324
+# https://www.biaodianfu.com/chineser-nlp-llm.html
+# http://www.yxxxx.ac.cn/ch/reader/download_pdf_file.aspx?journal_id=yxxxx&file_name=3618E016C89268EC45CA2F8FA0BBA66081564A44AFFCC5BD5091CA1B1D467EE158454322A8C621694447D0503BBC019C46F2490F365C3CE91CC5A5A613265953&open_type=self&file_no=20221210
 
 model_path = "chinese_roberta_pretrain"
 MODEL_ONNX_PATH = "chinese_roberta_pretrain/saved_dict/raw_bert_dynamic.onnx"
