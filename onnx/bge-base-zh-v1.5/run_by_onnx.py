@@ -71,7 +71,7 @@ if __name__ == '__main__':
     model_path = r'model/saved_dict'
     tag = 'tag'
     emb_encoder = EmbModelEncoder(key, model_path, tag)
-    one = emb_encoder.encode('你好，你叫什么名字')
+    one = emb_encoder.encode('样例数据-1')
     print(one)
     # text_list = []
     # for one in range(1, 2):

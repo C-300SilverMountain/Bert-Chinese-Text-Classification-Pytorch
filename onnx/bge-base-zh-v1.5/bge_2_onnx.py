@@ -6,8 +6,10 @@ import torch
 from transformers import AutoModel
 from transformers import BertTokenizer, BertModel
 
-model_path = "model/BAAI/bge-base-zh-v1.5"
-MODEL_ONNX_PATH = "model/saved_dict/raw_bert_dynamic.onnx"
+# model_path = "model/BAAI/bge-base-zh-v1.5"
+model_path ="model/Finetune"
+# MODEL_ONNX_PATH = "model/saved_dict/raw_bert_dynamic.onnx"
+MODEL_ONNX_PATH = "model/Finetune/raw_bert_dynamic.onnx"
 OPERATOR_EXPORT_TYPE = torch._C._onnx.OperatorExportTypes.ONNX
 model = AutoModel.from_pretrained(model_path)
 model.eval()
@@ -35,12 +37,12 @@ def run_roberta_on_onnx(onnx_path):
                     "attention_mask": attention_mask,
                     "token_type_ids": token_type_ids}
     )
-
+    # https://blog.csdn.net/ECNU_LZJ/article/details/103653133
     last = result[0][:, 0]
     sentence_embeddings = torch.nn.functional.normalize(torch.tensor(last), dim=-1)
 
     print(sentence_embeddings)
-    # print(last)
+    print(last)
     # print(len(last[0]))
 
 def pytorch_roberta_2_onnx():
@@ -66,7 +68,7 @@ def pytorch_roberta_2_onnx():
 if __name__ == '__main__':
     print('------')
     # 将roberta转换成 onnx 格式
-    # pytorch_roberta_2_onnx()
+    pytorch_roberta_2_onnx()
 
     # 在onnx环境下运行 roberta
-    run_roberta_on_onnx('model/saved_dict/raw_bert_dynamic.onnx')
+    # run_roberta_on_onnx('model/saved_dict/raw_bert_dynamic.onnx')
