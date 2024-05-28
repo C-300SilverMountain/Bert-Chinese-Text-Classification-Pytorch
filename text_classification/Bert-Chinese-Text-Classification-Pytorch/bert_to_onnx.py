@@ -14,7 +14,9 @@ model_name = 'bert'
 x = import_module('models.' + model_name)
 config = x.Config('THUCNews')
 model = x.Model(config).to(config.device)
-model.load_state_dict(torch.load(config.save_path))
+
+state_dict = torch.load(config.save_path)
+model.load_state_dict(state_dict)
 
 
 def build_args():
