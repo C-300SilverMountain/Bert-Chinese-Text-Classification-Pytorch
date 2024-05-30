@@ -4,9 +4,10 @@ import os
 import torch
 from transformers import BertTokenizer, BertModel
 
-from ner.ubert.modeling_ubert import UbertPipelines
+from ner.ubert.modeling_cust import UbertPipelines
 
-os.environ["CUDA_VISIBLE_DEVICES"] = '6'
+
+# os.environ["CUDA_VISIBLE_DEVICES"] = '6'
 
 
 def main():
@@ -41,6 +42,26 @@ def main():
                 {"entity_type": "岗位职位", "label": 0, "entity_list": []},
                 {"entity_type": "旅游景点", "label": 0, "entity_list": []}
             ],
+            "id": 0},
+        {
+            "task_type": "抽取任务",
+            "subtask_type": "实体识别",
+            "text": "就天涯网推出彩票服务频道是否是业内人士所谓的打政策“擦边球”，记者近日对此事求证彩票监管部门。",
+            "choices": [
+                {"entity_type": "地址", "label": 0, "entity_list": []},
+                {"entity_type": "书名", "label": 0, "entity_list": []},
+                {"entity_type": "公司", "label": 0, "entity_list": [
+                    {"entity_name": "天涯网", "entity_type": "公司", "entity_idx": [[1, 3]]}]},
+                {"entity_type": "游戏", "label": 0, "entity_list": []},
+                {"entity_type": "政府机构", "label": 0, "entity_list": []},
+                {"entity_type": "电影名称", "label": 0, "entity_list": []},
+                {"entity_type": "人物姓名", "label": 0, "entity_list": []},
+                {"entity_type": "组织机构", "label": 0, "entity_list": [
+                    {"entity_name": "彩票监管部门", "entity_type": "组织机构", "entity_idx": [[40, 45]]}]},
+                {"entity_type": "岗位职位", "label": 0, "entity_list": [
+                    {"entity_name": "记者", "entity_type": "岗位职位", "entity_idx": [[31, 32]]}]},
+                {"entity_type": "旅游景点", "label": 0, "entity_list": []}
+            ],
             "id": 0}
     ]
     dev_data = [
@@ -70,20 +91,20 @@ def main():
         {
             "task_type": "抽取任务",
             "subtask_type": "实体识别",
-            "text": "这也让很多业主据此认为，雅清苑是政府公务员挤对了国家的经适房政策。",
+            "text": "这也让马云据此认为，雅清苑是政府公务员挤对了国家的经适房政策。",
             "choices": [
-                {"entity_type": "地址", "label": 0, "entity_list": [
-                    {"entity_name": "雅清苑", "entity_type": "地址", "entity_idx": [[12, 14]]}]},
-                {"entity_type": "书名", "label": 0, "entity_list": []},
-                {"entity_type": "公司", "label": 0, "entity_list": []},
-                {"entity_type": "游戏", "label": 0, "entity_list": []},
-                {"entity_type": "政府机构", "label": 0, "entity_list": []},
-                {"entity_type": "电影名称", "label": 0, "entity_list": []},
-                {"entity_type": "人物姓名", "label": 0, "entity_list": []},
-                {"entity_type": "组织机构", "label": 0, "entity_list": []},
-                {"entity_type": "岗位职位", "label": 0, "entity_list": [
-                    {"entity_name": "公务员", "entity_type": "岗位职位", "entity_idx": [[18, 20]]}]},
-                {"entity_type": "旅游景点", "label": 0, "entity_list": []}
+                {"entity_type": "地址",  "entity_list": [
+                    ]},
+                {"entity_type": "书名",  "entity_list": []},
+                {"entity_type": "公司", "entity_list": []},
+                {"entity_type": "游戏",  "entity_list": []},
+                {"entity_type": "政府机构",  "entity_list": []},
+                {"entity_type": "电影名称",  "entity_list": []},
+                {"entity_type": "人物姓名",  "entity_list": []},
+                {"entity_type": "组织机构",  "entity_list": []},
+                {"entity_type": "岗位职位",  "entity_list": [
+                    ]},
+                {"entity_type": "旅游景点",  "entity_list": []}
             ],
             "id": 0},
     ]
