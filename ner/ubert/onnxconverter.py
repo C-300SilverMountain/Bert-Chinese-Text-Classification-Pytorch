@@ -201,6 +201,7 @@ if __name__ == '__main__':
     print(f'available providers: {ort.get_available_providers()}')
     onnx_optim_file_name = 'onnxopt/opt.onnx'
     model, tokenizer = load_model(ckpt_path)
+    print(model.dtype)
     convert(model, tokenizer, max_length=args.max_length, export_file_name=onnx_file_name)
     #
     # optimize_onnx(onnx_file_name, onnx_optim_file_name, fp16=False, use_cuda=False)

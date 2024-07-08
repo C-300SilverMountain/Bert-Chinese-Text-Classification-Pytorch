@@ -110,8 +110,12 @@ def main():
     ]
 
     model = UbertPipelines(args)
+    # if model.dtype != torch.float16:
+    #     model.half()  # 将模型转换为float16
+    # print(model.dtype)  # 再次检查模型的数据类型
     model.fit(train_data, dev_data)
     result = model.predict(test_data)
+
     for line in result:
         print(line)
 
